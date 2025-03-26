@@ -11,13 +11,23 @@
       "type": "uuid"
     },
     {
-      "allow_nil?": false,
+      "allow_nil?": true,
       "default": "nil",
       "generated?": false,
       "primary_key?": false,
       "references": null,
       "size": null,
-      "source": "version_action_type",
+      "source": "first_name",
+      "type": "text"
+    },
+    {
+      "allow_nil?": true,
+      "default": "nil",
+      "generated?": false,
+      "primary_key?": false,
+      "references": null,
+      "size": null,
+      "source": "last_name",
       "type": "text"
     },
     {
@@ -38,46 +48,16 @@
           "global": null,
           "strategy": null
         },
-        "name": "authors_versions_version_source_id_fkey",
+        "name": "authors_org_id_fkey",
         "on_delete": null,
         "on_update": null,
         "primary_key?": true,
         "schema": "public",
-        "table": "authors"
+        "table": "orgs"
       },
       "size": null,
-      "source": "version_source_id",
+      "source": "org_id",
       "type": "uuid"
-    },
-    {
-      "allow_nil?": true,
-      "default": "nil",
-      "generated?": false,
-      "primary_key?": false,
-      "references": null,
-      "size": null,
-      "source": "changes",
-      "type": "map"
-    },
-    {
-      "allow_nil?": false,
-      "default": "fragment(\"(now() AT TIME ZONE 'utc')\")",
-      "generated?": false,
-      "primary_key?": false,
-      "references": null,
-      "size": null,
-      "source": "version_inserted_at",
-      "type": "utc_datetime_usec"
-    },
-    {
-      "allow_nil?": false,
-      "default": "fragment(\"(now() AT TIME ZONE 'utc')\")",
-      "generated?": false,
-      "primary_key?": false,
-      "references": null,
-      "size": null,
-      "source": "version_updated_at",
-      "type": "utc_datetime_usec"
     }
   ],
   "base_filter": null,
@@ -85,14 +65,14 @@
   "custom_indexes": [],
   "custom_statements": [],
   "has_create_action": true,
-  "hash": "27BF0DAE01F29FEF6C9605BC84D56A717680054A8886AE4E116FA1D3C31A8E98",
+  "hash": "7761D9E081616A763481A1DFEEEB48DC4AE20C555BC33B1E6537BA966B351A8A",
   "identities": [],
   "multitenancy": {
-    "attribute": null,
-    "global": null,
-    "strategy": null
+    "attribute": "org_id",
+    "global": false,
+    "strategy": "attribute"
   },
   "repo": "Elixir.AshUpdateUnloadCheck.Repo",
   "schema": null,
-  "table": "authors_versions"
+  "table": "authors"
 }

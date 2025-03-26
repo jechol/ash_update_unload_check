@@ -17,28 +17,8 @@
       "primary_key?": false,
       "references": null,
       "size": null,
-      "source": "first_name",
+      "source": "name",
       "type": "text"
-    },
-    {
-      "allow_nil?": true,
-      "default": "nil",
-      "generated?": false,
-      "primary_key?": false,
-      "references": null,
-      "size": null,
-      "source": "last_name",
-      "type": "text"
-    },
-    {
-      "allow_nil?": true,
-      "default": "nil",
-      "generated?": false,
-      "primary_key?": false,
-      "references": null,
-      "size": null,
-      "source": "archived_at",
-      "type": "utc_datetime_usec"
     }
   ],
   "base_filter": null,
@@ -46,7 +26,7 @@
   "custom_indexes": [],
   "custom_statements": [],
   "has_create_action": true,
-  "hash": "A2B15B533E44B42CB5ADD6ED399334EAE17D877FCA9568697060DCAC217C8D75",
+  "hash": "E57B6F93A9098DA8AACEF3681F45D3BE841CDA8FF30BC1B61EB54BF53730BB68",
   "identities": [],
   "multitenancy": {
     "attribute": null,
@@ -55,5 +35,5 @@
   },
   "repo": "Elixir.AshUpdateUnloadCheck.Repo",
   "schema": null,
-  "table": "authors"
+  "table": "orgs"
 }

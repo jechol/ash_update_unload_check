@@ -1,4 +1,4 @@
-defmodule AshUpdateUnloadCheck.Repo.Migrations.MigrateResourcesExtensions1 do
+defmodule AshUpdateUnloadCheck.Repo.Migrations.CreateAllResourcesExtensions1 do
   @moduledoc """
   Installs any extensions that are mentioned in the repo's `installed_extensions/0` callback
 

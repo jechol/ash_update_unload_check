@@ -26,9 +26,6 @@ defmodule AshUpdateUnloadCheck.MixProject do
   defp deps do
     [
       {:sourceror, "~> 1.7", only: [:dev, :test]},
-      {:ash_state_machine, ">= 0.0.0"},
-      {:ash_paper_trail, ">= 0.0.0"},
-      {:ash_archival, ">= 0.0.0"},
       {:ash, github: "ash-project/ash", branch: "main", override: true},
       {:ash_postgres, github: "ash-project/ash_postgres", branch: "main", override: true},
       {:igniter, ">= 0.0.0", only: [:dev, :test]}

@@ -1,4 +1,4 @@
-defmodule AshUpdateUnloadCheck.Repo.Migrations.MigrateResources1 do
+defmodule AshUpdateUnloadCheck.Repo.Migrations.CreateAllResources do
   @moduledoc """
   Updates resources based on their most recent snapshots.
 
@@ -11,7 +11,24 @@ defmodule AshUpdateUnloadCheck.Repo.Migrations.MigrateResources1 do
     create table(:posts, primary_key: false) do
       add(:id, :uuid, null: false, default: fragment("gen_random_uuid()"), primary_key: true)
       add(:title, :text)
+      add(:published, :boolean, default: true)
+      add(:org_id, :uuid, null: false)
       add(:author_id, :uuid)
+    end
+
+    create table(:orgs, primary_key: false) do
+      add(:id, :uuid, null: false, default: fragment("gen_random_uuid()"), primary_key: true)
+    end
+
+    alter table(:posts) do
+      modify(
+        :org_id,
+        references(:orgs, column: :id, name: "posts_org_id_fkey", type: :uuid, prefix: "public")
+      )
+    end
+
+    alter table(:orgs) do
+      add(:name, :text)
     end
 
     create table(:authors, primary_key: false) do
@@ -33,11 +50,20 @@ defmodule AshUpdateUnloadCheck.Repo.Migrations.MigrateResources1 do
     alter table(:authors) do
       add(:first_name, :text)
       add(:last_name, :text)
+
+      add(
+        :org_id,
+        references(:orgs, column: :id, name: "authors_org_id_fkey", type: :uuid, prefix: "public"),
+        null: false
+      )
     end
   end
 
   def down do
+    drop(constraint(:authors, "authors_org_id_fkey"))
+
     alter table(:authors) do
+      remove(:org_id)
       remove(:last_name)
       remove(:first_name)
     end
@@ -49,6 +75,18 @@ defmodule AshUpdateUnloadCheck.Repo.Migrations.MigrateResources1 do
     end
 
     drop(table(:authors))
+
+    alter table(:orgs) do
+      remove(:name)
+    end
+
+    drop(constraint(:posts, "posts_org_id_fkey"))
+
+    alter table(:posts) do
+      modify(:org_id, :uuid)
+    end
+
+    drop(table(:orgs))
 
     drop(table(:posts))
   end

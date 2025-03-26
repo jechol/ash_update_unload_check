@@ -1,32 +1,8 @@
 defmodule AshUpdateUnloadCheck.Content.Author do
-  use AshUpdateUnloadCheck.Content.BaseResource, extensions: [AshStateMachine]
-
-  state_machine do
-    initial_states [:active]
-    default_initial_state :active
-
-    transitions do
-      transition :deactivate, from: :active, to: :inactive
-      transition :activate, from: :inactive, to: :active
-    end
-  end
+  use AshUpdateUnloadCheck.Content.BaseResource
 
   actions do
-    defaults [:read, :destroy, create: :*]
-
-    update :update do
-      primary? true
-      accept :*
-      require_atomic? false
-    end
-
-    update :activate do
-      change transition_state(:active)
-    end
-
-    update :deactivate do
-      change transition_state(:inactive)
-    end
+    defaults [:read, :destroy, create: :*, update: :*]
   end
 
   preparations do
