@@ -1,8 +1,5 @@
 defmodule AshUpdateUnloadCheck.Content.Author do
-  use AshUpdateUnloadCheck.Content.BaseResource,
-    otp_app: :ash_update_unload_check,
-    domain: AshUpdateUnloadCheck.Content,
-    data_layer: AshPostgres.DataLayer
+  use AshUpdateUnloadCheck.Content.BaseResource
 
   actions do
     defaults [:read, :destroy, create: :*, update: :*]
