@@ -12,7 +12,13 @@ defmodule AshUpdateUnloadCheck.Content.Author do
   end
 
   actions do
-    defaults [:read, :destroy, create: :*, update: :*]
+    defaults [:read, :destroy, create: :*]
+
+    update :update do
+      primary? true
+      accept :*
+      require_atomic? false
+    end
 
     update :activate do
       change transition_state(:active)
