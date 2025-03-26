@@ -1,6 +1,7 @@
 %{
   "ash": {:git, "https://github.com/ash-project/ash.git", "4dcb3555c7ed829cebcc0066ea923bc5aba559af", [branch: "main"]},
   "ash_archival": {:hex, :ash_archival, "1.1.2", "b49dd5847cb1cfda02c34cc843d78e741afee66ee28acd90e4c7a44eecf2dab1", [:mix], [{:ash, ">= 3.0.5 and < 4.0.0-0", [hex: :ash, repo: "hexpm", optional: false]}], "hexpm", "fc428179b3de07002dca5b324b8cb3f6f8bfdeb6ce2daf99057bf51e2f96c021"},
+  "ash_paper_trail": {:hex, :ash_paper_trail, "0.5.1", "e5ceac98490f04d59d68b38faf5f77f64b9709f3ba52ba7e856d416d8f63e67a", [:mix], [{:ash, "~> 3.0", [hex: :ash, repo: "hexpm", optional: false]}], "hexpm", "b03b40573494ac182b9d7887e3108f66dc01466f88b5a64cac6fe202bec51d2d"},
   "ash_postgres": {:git, "https://github.com/ash-project/ash_postgres.git", "72eeb126286584a995645300cea1dadc8ba87cba", [branch: "main"]},
   "ash_sql": {:hex, :ash_sql, "0.2.63", "1b3c9e9d59d17cccf7b105c96ed15f7236ade502c91432c581bb8ce16507cf29", [:mix], [{:ash, ">= 3.4.65 and < 4.0.0-0", [hex: :ash, repo: "hexpm", optional: false]}, {:ecto, "~> 3.9", [hex: :ecto, repo: "hexpm", optional: false]}, {:ecto_sql, "~> 3.9", [hex: :ecto_sql, repo: "hexpm", optional: false]}], "hexpm", "66b99e314ba6fe60bf80a6a4999df50af9ac4053e24b0742225bcd187def44c1"},
   "db_connection": {:hex, :db_connection, "2.7.0", "b99faa9291bb09892c7da373bb82cba59aefa9b36300f6145c5f201c7adf48ec", [:mix], [{:telemetry, "~> 0.4 or ~> 1.0", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "dcf08f31b2701f857dfc787fbad78223d61a32204f217f15e881dd93e4bdd3ff"},
