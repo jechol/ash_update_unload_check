@@ -29,7 +29,9 @@ defmodule AshUpdateUnloadCheck.Content.Author do
   end
 
   relationships do
-    has_many :posts, AshUpdateUnloadCheck.Content.Post
+    has_many :posts, AshUpdateUnloadCheck.Content.Post do
+      filter expr(published)
+    end
   end
 
   calculations do

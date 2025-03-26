@@ -14,6 +14,11 @@ defmodule AshUpdateUnloadCheck.Content.Post do
     attribute :title, :string do
       public? true
     end
+
+    attribute :published, :boolean do
+      public? true
+      default true
+    end
   end
 
   relationships do
