@@ -2,7 +2,7 @@ defmodule AshUpdateUnloadCheck.Repo do
   use AshPostgres.Repo, otp_app: :ash_update_unload_check
 
   def min_pg_version do
-    %Version{major: 16, minor: 6, patch: 0}
+    %Version{major: 16, minor: 0, patch: 0}
   end
 
   # Don't open unnecessary transactions
