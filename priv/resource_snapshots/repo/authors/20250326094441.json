@@ -17,6 +17,16 @@
       "primary_key?": false,
       "references": null,
       "size": null,
+      "source": "birthday",
+      "type": "date"
+    },
+    {
+      "allow_nil?": true,
+      "default": "nil",
+      "generated?": false,
+      "primary_key?": false,
+      "references": null,
+      "size": null,
       "source": "first_name",
       "type": "text"
     },
@@ -65,7 +75,7 @@
   "custom_indexes": [],
   "custom_statements": [],
   "has_create_action": true,
-  "hash": "7761D9E081616A763481A1DFEEEB48DC4AE20C555BC33B1E6537BA966B351A8A",
+  "hash": "1EFDBA9A2B4DC7F9865841B17A40371E280E7497EC26043730FF490F4015910F",
   "identities": [],
   "multitenancy": {
     "attribute": "org_id",

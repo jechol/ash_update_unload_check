@@ -16,6 +16,8 @@ defmodule AshUpdateUnloadCheck.Content.Author do
   attributes do
     uuid_primary_key :id
 
+    attribute :birthday, :date, public?: true
+
     attribute :first_name, :string do
       public? true
     end

@@ -15,7 +15,11 @@ defmodule AshUpdateUnloadCheck.Content.AuthorTest do
 
     author =
       Author
-      |> Ash.Changeset.for_create(:create, %{first_name: "foo", last_name: "bar"})
+      |> Ash.Changeset.for_create(:create, %{
+        first_name: "foo",
+        last_name: "bar",
+        birthday: Date.utc_today()
+      })
       |> Ash.create!(ash_opts)
 
     _post =
@@ -28,7 +32,8 @@ defmodule AshUpdateUnloadCheck.Content.AuthorTest do
 
     assert [%Post{}] = author.posts
 
-    author = author |> Ash.Changeset.for_update(:update, %{first_name: "foo2"}) |> Ash.update!()
+    author =
+      author |> Ash.Changeset.for_update(:update, %{birthday: nil}) |> Ash.update!()
 
     assert [%Post{}] = author.posts
   end

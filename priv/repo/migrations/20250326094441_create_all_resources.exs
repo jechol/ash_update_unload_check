@@ -48,6 +48,7 @@ defmodule AshUpdateUnloadCheck.Repo.Migrations.CreateAllResources do
     end
 
     alter table(:authors) do
+      add(:birthday, :date)
       add(:first_name, :text)
       add(:last_name, :text)
 
@@ -66,6 +67,7 @@ defmodule AshUpdateUnloadCheck.Repo.Migrations.CreateAllResources do
       remove(:org_id)
       remove(:last_name)
       remove(:first_name)
+      remove(:birthday)
     end
 
     drop(constraint(:posts, "posts_author_id_fkey"))
