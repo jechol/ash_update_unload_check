@@ -5,7 +5,7 @@ defmodule AshUpdateUnloadCheck.Content.Post do
     data_layer: AshPostgres.DataLayer
 
   actions do
-    defaults [:read, :destroy, create: [:title], update: [:title]]
+    defaults [:read, :destroy, create: :*, update: :*]
   end
 
   attributes do

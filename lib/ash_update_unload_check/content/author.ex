@@ -5,12 +5,15 @@ defmodule AshUpdateUnloadCheck.Content.Author do
     data_layer: AshPostgres.DataLayer
 
   actions do
-    defaults [
-      :read,
-      :destroy,
-      create: [:first_name, :last_name],
-      update: [:first_name, :last_name]
-    ]
+    defaults [:read, :destroy, create: :*, update: :*]
+  end
+
+  preparations do
+    prepare build(load: [])
+  end
+
+  changes do
+    change &noop/2, on: :create, only_when_valid?: true
   end
 
   attributes do
@@ -29,8 +32,16 @@ defmodule AshUpdateUnloadCheck.Content.Author do
     has_many :posts, AshUpdateUnloadCheck.Content.Post
   end
 
+  calculations do
+    calculate :foo, :boolean, expr(true)
+  end
+
   postgres do
     table "authors"
     repo AshUpdateUnloadCheck.Repo
+  end
+
+  def noop(cs, _ctx) do
+    cs
   end
 end
