@@ -38,6 +38,7 @@ config :spark,
 
 config :ash_update_unload_check,
   ecto_repos: [AshUpdateUnloadCheck.Repo],
-  ash_domains: [AshUpdateUnloadCheck.Content]
+  ash_domains: [AshUpdateUnloadCheck.Content],
+  base_resources: [AshUpdateUnloadCheck.Content.BaseResource]
 
 import_config "#{config_env()}.exs"

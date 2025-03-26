@@ -1,5 +1,5 @@
 defmodule AshUpdateUnloadCheck.Content.Post do
-  use Ash.Resource,
+  use AshUpdateUnloadCheck.Content.BaseResource,
     otp_app: :ash_update_unload_check,
     domain: AshUpdateUnloadCheck.Content,
     data_layer: AshPostgres.DataLayer
