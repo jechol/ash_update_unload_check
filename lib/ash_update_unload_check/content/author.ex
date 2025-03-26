@@ -9,7 +9,7 @@ defmodule AshUpdateUnloadCheck.Content.Author do
   end
 
   preparations do
-    prepare build(load: [])
+    prepare build(load: [:foo])
   end
 
   changes do
