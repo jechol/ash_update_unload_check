@@ -25,13 +25,13 @@ defmodule AshUpdateUnloadCheck.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ash_state_machine, "~> 0.2"},
-      {:ash_paper_trail, "~> 0.5"},
-      {:ash_archival, "~> 1.0"},
       {:sourceror, "~> 1.7", only: [:dev, :test]},
+      {:ash_state_machine, ">= 0.0.0"},
+      {:ash_paper_trail, ">= 0.0.0"},
+      {:ash_archival, ">= 0.0.0"},
       {:ash, github: "ash-project/ash", branch: "main", override: true},
       {:ash_postgres, github: "ash-project/ash_postgres", branch: "main", override: true},
-      {:igniter, "~> 0.5", only: [:dev, :test]}
+      {:igniter, ">= 0.0.0", only: [:dev, :test]}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
