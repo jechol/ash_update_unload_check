@@ -25,6 +25,7 @@ defmodule AshUpdateUnloadCheck.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:ash_archival, "~> 1.0"},
       {:sourceror, "~> 1.7", only: [:dev, :test]},
       {:ash, github: "ash-project/ash", branch: "main", override: true},
       {:ash_postgres, github: "ash-project/ash_postgres", branch: "main", override: true},
